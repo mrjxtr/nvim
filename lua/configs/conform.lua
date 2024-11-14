@@ -1,11 +1,11 @@
 local options = {
     formatters_by_ft = {
         lua = { "stylua" },
+        go = { "gofumpt", "goimports-reviser", "golines" },
+        python = { "black", "isort" },
         -- c = { "clang-format" },
         -- cpp = { "clang-format" },
-        -- go = { "gofumpt", "goimports-reviser", "golines" },
         -- haskell = { "fourmolu", "stylish-haskell" },
-        python = { "black" },
     },
 
     formatters = {
@@ -21,23 +21,31 @@ local options = {
         --                 PackConstructorInitializers: Never}",
         --     },
         -- },
+        --
         -- -- Golang
-        -- ["goimports-reviser"] = {
-        --     prepend_args = { "-rm-unused" },
-        -- },
-        -- golines = {
-        --     prepend_args = { "--max-len=80" },
-        -- },
+        ["goimports-reviser"] = {
+            prepend_args = { "-rm-unused" },
+        },
+        golines = {
+            prepend_args = { "--max-len=80" },
+        },
+        --
         -- -- Lua
-        -- stylua = {
-        --     prepend_args = {
-        --         "--column-width", "80",
-        --         "--line-endings", "Unix",
-        --         "--indent-type", "Spaces",
-        --         "--indent-width", "4",
-        --         "--quote-style", "AutoPreferDouble",
-        --     },
-        -- },
+        stylua = {
+            prepend_args = {
+                "--column-width",
+                "80",
+                "--line-endings",
+                "Unix",
+                "--indent-type",
+                "Spaces",
+                "--indent-width",
+                "4",
+                "--quote-style",
+                "AutoPreferDouble",
+            },
+        },
+        --
         -- Python
         black = {
             prepend_args = {
@@ -46,12 +54,12 @@ local options = {
                 "80",
             },
         },
-        -- isort = {
-        --     prepend_args = {
-        --         "--profile",
-        --         "black",
-        --     },
-        -- },
+        isort = {
+            prepend_args = {
+                "--profile",
+                "black",
+            },
+        },
     },
 
     format_on_save = {
