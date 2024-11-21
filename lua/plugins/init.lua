@@ -67,6 +67,9 @@ return {
                 side = "right",
                 width = 35,
             },
+            filters = {
+                dotfiles = false,
+            },
         },
     },
 }
