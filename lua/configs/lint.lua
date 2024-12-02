@@ -2,7 +2,7 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
     lua = { "luacheck" },
-    python = { "ruff", "mypy" },
+    python = { "ruff" },
     javascript = { "eslint_d" },
     django = { "djlint" },
     angular = { "djlint" },
