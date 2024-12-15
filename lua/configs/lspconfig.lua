@@ -9,16 +9,15 @@ lspconfig.servers = {
     "lua_ls",
     "pyright",
     "gopls",
+    "ts_ls",
+    "eslint",
     -- "clangd",
     -- "hls",
     -- "ols",
 }
 
 -- list of servers configured with default config.
-local default_servers = {
-    "eslint",
-    -- "ols",
-}
+local default_servers = {}
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
@@ -28,6 +27,24 @@ for _, lsp in ipairs(default_servers) do
         capabilities = capabilities,
     })
 end
+
+lspconfig.eslint.setup({
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+})
+
+lspconfig.ts_ls.setup({
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        },
+    },
+})
 
 lspconfig.pyright.setup({
     on_attach = on_attach,
