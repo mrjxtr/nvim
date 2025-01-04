@@ -1,6 +1,4 @@
-![Screenshot](nvchad-neovim.png)
-https://www.youtube.com/watch?v=TNRFegMqbWA
-# Installing NvChad Version 2.5
+# Installing NvChad
 ## Backup and remove old nvim config.
 Backup old nvim config.
 ```
@@ -26,9 +24,9 @@ git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 ```
 Or this already configured version
 ```
-git clone https://github.com/ProgrammingRainbow/NvChad-2.5 ~/.config/nvim && nvim
+git clone https://github.com/mrjxtr/nvim.git ~/.config/nvim && nvim
 ```
-You can safely remove the `.git` and image files.
+You can safely remove the `.git` folder.
 ```
 rm-rf ~/.config/nvim/.git
 rm ~/.config/nvim/*.png
