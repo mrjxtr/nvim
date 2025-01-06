@@ -1,4 +1,4 @@
-import { sleep } from "https://deno.land/x/sleep/mod.ts";
+mport { sleep } from "https://deno.land/x/sleep/mod.ts";
 
 class HelloPrinter {
     static async printHello() {

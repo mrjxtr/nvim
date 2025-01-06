@@ -17,7 +17,6 @@ func (hp HelloPrinter) PrintHello() {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	hp := HelloPrinter{}
 	hp.PrintHello()
 }

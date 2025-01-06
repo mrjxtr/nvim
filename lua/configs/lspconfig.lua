@@ -21,6 +21,7 @@ local default_servers = {
     "cssls",
     "html",
     "djlsp",
+    "bashls",
 }
 
 -- lsps with default config

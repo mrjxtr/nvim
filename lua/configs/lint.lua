@@ -9,6 +9,7 @@ lint.linters_by_ft = {
     angular = { "djlint" },
     jinja = { "djlint" },
     go = { "djlint" },
+    bash = { "shellharden" },
 }
 
 lint.linters.luacheck.args = {
