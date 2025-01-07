@@ -18,7 +18,7 @@ local options = {
     },
 
     formatters = {
-        -- -- C & C++
+        -- C & C++
         -- ["clang-format"] = {
         --     prepend_args = {
         --         "-style={ \
@@ -31,7 +31,7 @@ local options = {
         --     },
         -- },
         --
-        -- -- Golang
+        -- Golang
         ["goimports-reviser"] = {
             prepend_args = { "-rm-unused" },
         },
@@ -39,7 +39,7 @@ local options = {
             prepend_args = { "--max-len=80" },
         },
         --
-        -- -- Lua
+        -- Lua
         stylua = {
             prepend_args = {
                 "--column-width",
