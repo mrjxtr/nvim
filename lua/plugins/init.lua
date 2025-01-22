@@ -77,4 +77,35 @@ return {
         "Exafunction/codeium.vim",
         event = "BufEnter",
     },
+
+    {
+        -- Configure tab behaviour when lsp suggestions are available
+        "hrsh7th/nvim-cmp",
+        opts = function()
+            local cmp = require("cmp")
+            local M = require("nvchad.configs.cmp")
+
+            -- Modify default mappings
+            M.mapping = {
+                -- Disable tab for navigation
+                ["<Tab>"] = cmp.config.disable,
+                ["<S-Tab>"] = cmp.config.disable,
+
+                -- Use Ctrl+n/p for navigation instead
+                ["<C-n>"] = cmp.mapping.select_next_item(),
+                ["<C-p>"] = cmp.mapping.select_prev_item(),
+
+                -- Keep default Enter behavior for confirmation
+                ["<CR>"] = cmp.mapping.confirm({
+                    behavior = cmp.ConfirmBehavior.Insert,
+                    select = true,
+                }),
+
+                -- Keep default Ctrl+Space for manual trigger
+                ["<C-Space>"] = cmp.mapping.complete(),
+            }
+
+            return M
+        end,
+    },
 }
