@@ -15,5 +15,4 @@ o.scrolloff = 10 -- keep 10 lines below and above cursor
 o.colorcolumn = "80"
 o.autoindent = true
 
--- set filetype for .CBL COBOL files.
--- vim.cmd([[ au BufRead,BufNewFile *.CBL set filetype=cobol ]])
+o.wrap = false -- don't wrap lines
