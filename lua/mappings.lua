@@ -13,4 +13,8 @@ map("i", "<S-k>", "<Esc>:m .-2<CR>==gi")
 map("v", "<S-j>", ":m '>+1<CR>gv=gv")
 map("v", "<S-k>", ":m '<-2<CR>gv=gv")
 
+-- mappings for continuous indent/outdent in visual mode
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
