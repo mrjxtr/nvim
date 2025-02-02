@@ -23,6 +23,7 @@ local default_servers = {
     "djlsp",
     "bashls",
     "htmx",
+    "templ",
 }
 
 -- lsps with default config
