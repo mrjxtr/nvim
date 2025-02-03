@@ -32,3 +32,11 @@ map(
     "<cmd> TodoTelescope keywords= FIX, TODO, INFO, NOTE <cr>",
     { desc = "Find TODOs" }
 )
+
+-- show function tooltip
+map(
+    "n",
+    "gF",
+    "<cmd>lua vim.lsp.buf.hover()<cr>",
+    { desc = "Show function tooltip" }
+)
