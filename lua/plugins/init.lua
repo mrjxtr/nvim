@@ -7,7 +7,6 @@ return {
             require("configs.treesitter")
         end,
     },
-
     {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
@@ -107,5 +106,24 @@ return {
 
             return M
         end,
+    },
+
+    {
+        "folke/todo-comments.nvim",
+        event = "VeryLazy",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            keywords = {
+                FIX = {
+                    icon = " ", -- icon used for the sign, and in search results
+                    color = "#DB6969", -- can be a hex color, or a named color (see below)
+                    alt = { "BUG", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+                    -- signs = false, -- configure signs for some keywords individually
+                },
+                TODO = { icon = " ", color = "#FFC369" },
+                INFO = { icon = " ", color = "#648CE3", alt = { " " } },
+                NOTE = { icon = " ", color = "#52BA88" },
+            },
+        },
     },
 }

@@ -16,3 +16,7 @@ o.colorcolumn = "80"
 o.autoindent = true
 
 o.wrap = false -- don't wrap lines
+
+-- Disable codeium by default
+-- Activate by running `CodeiumEnable`
+vim.g.codeium_enabled = false

@@ -16,3 +16,18 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- a keybind to run ":CodeiumEnable"
+map(
+    { "n", "i", "v" },
+    "<C-c>",
+    "<cmd> CodeiumEnable <cr>",
+    { desc = "Enable Codeium" }
+)
+
+-- find all TODOs
+map(
+    "n",
+    "<leader>ft",
+    "<cmd> TodoTelescope keywords=TODO, FIX, NOTE, WARN, TEST <cr>",
+    { desc = "Find TODOs" }
+)
