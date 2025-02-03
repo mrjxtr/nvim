@@ -24,6 +24,7 @@ local default_servers = {
     "bashls",
     "htmx",
     "templ",
+    "dockerls",
 }
 
 -- lsps with default config
