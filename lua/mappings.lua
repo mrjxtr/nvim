@@ -16,7 +16,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
--- a keybind to run ":CodeiumEnable"
+
+-- Enable Codeium
 map(
     { "n", "i", "v" },
     "<C-c>",
@@ -24,7 +25,7 @@ map(
     { desc = "Enable Codeium" }
 )
 
--- find all TODOs
+-- Find all TODOs
 map(
     "n",
     "<leader>ft",
