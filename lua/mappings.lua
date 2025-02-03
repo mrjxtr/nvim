@@ -28,6 +28,6 @@ map(
 map(
     "n",
     "<leader>ft",
-    "<cmd> TodoTelescope keywords=TODO, FIX, NOTE, WARN, TEST <cr>",
+    "<cmd> TodoTelescope keywords= FIX, TODO, INFO, NOTE <cr>",
     { desc = "Find TODOs" }
 )
