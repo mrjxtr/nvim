@@ -36,7 +36,7 @@ map(
 -- show function tooltip
 map(
     "n",
-    "gF",
+    "gh",
     "<cmd>lua vim.lsp.buf.hover()<cr>",
     { desc = "Show function tooltip" }
 )
