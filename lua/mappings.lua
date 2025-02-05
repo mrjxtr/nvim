@@ -33,7 +33,7 @@ map(
     { desc = "Find TODOs" }
 )
 
--- show function tooltip
+-- Show function tooltip
 map(
     "n",
     "gh",

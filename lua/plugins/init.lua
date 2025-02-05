@@ -90,9 +90,9 @@ return {
                 ["<Tab>"] = cmp.config.disable,
                 ["<S-Tab>"] = cmp.config.disable,
 
-                -- Use Ctrl+n/p for navigation instead
-                ["<C-n>"] = cmp.mapping.select_next_item(),
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
+                -- Use Ctrl+j/k for navigation instead
+                ["<C-j>"] = cmp.mapping.select_next_item(),
+                ["<C-k>"] = cmp.mapping.select_prev_item(),
 
                 -- Keep default Enter behavior for confirmation
                 ["<CR>"] = cmp.mapping.confirm({
