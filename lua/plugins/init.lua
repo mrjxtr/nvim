@@ -133,4 +133,32 @@ return {
             require("nvterm").setup()
         end,
     },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        event = "BufEnter",
+        opts = function()
+            local actions = require("telescope.actions")
+
+            return {
+                defaults = {
+                    layout_config = {
+                        prompt_position = "top",
+                    },
+                    sorting_strategy = "ascending",
+                    mappings = {
+                        i = {
+                            -- Disable default j/k mappings
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+
+                            -- Disable the default <C-n>/<C-p> mappings
+                            ["<C-n>"] = false,
+                            ["<C-p>"] = false,
+                        },
+                    },
+                },
+            }
+        end,
+    },
 }
