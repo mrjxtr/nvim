@@ -17,19 +17,25 @@ map("v", ">", ">gv")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
--- Enable Codeium
+-- Enable/Disable Codeium
 map(
-    { "n", "i", "v" },
+    { "n", "v" },
     "<C-c>",
     "<cmd> CodeiumEnable <cr>",
     { desc = "Enable Codeium" }
+)
+map(
+    { "n", "v" },
+    "<C-c-d>",
+    "<cmd> CodeiumDisable <cr>",
+    { desc = "Disable Codeium" }
 )
 
 -- Find all TODOs
 map(
     "n",
     "<leader>ft",
-    "<cmd> TodoTelescope keywords= FIX, TODO, INFO, NOTE <cr>",
+    "<cmd> TodoTelescope keywords=FIX,TODO,INFO,NOTE <cr>",
     { desc = "Find TODOs" }
 )
 
