@@ -47,31 +47,35 @@ map(
     { desc = "Show function tooltip" }
 )
 
+-- Show floating terminal
 map({ "n", "t" }, "<A-i>", function()
     require("nvchad.term").toggle({
         pos = "float",
         id = "floatTerm",
         float_opts = {
-            row = 0.2,
+            row = 0.15,
             col = 0.2,
             width = 0.6,
             height = 0.60,
+            border = "rounded",
         },
     })
 end, { desc = "terminal toggle floating term" })
 
+-- Show vertical terminal
 map({ "n", "t" }, "<A-v>", function()
     require("nvchad.term").toggle({
         pos = "vsp",
         id = "vertTerm",
-        size = 0.4,
+        size = 0.35,
     })
 end, { desc = "terminal toggle vertical term" })
 
+-- Show horizontal terminal
 map({ "n", "t" }, "<A-h>", function()
     require("nvchad.term").toggle({
         pos = "sp",
-        id = "vertTerm",
+        id = "hrzTerm",
         size = 0.4,
     })
-end, { desc = "terminal toggle vertical term" })
+end, { desc = "terminal toggle horizontal term" })
