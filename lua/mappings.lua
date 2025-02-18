@@ -46,3 +46,26 @@ map(
     "<cmd>lua vim.lsp.buf.hover()<cr>",
     { desc = "Show function tooltip" }
 )
+
+map({ "n", "t" }, "<A-i>", function()
+    require("nvchad.term").toggle({
+        pos = "float",
+        id = "floatTerm",
+        float_opts = {
+            row = 0.2,
+            col = 0.2,
+            width = 0.6,
+            height = 0.60,
+        },
+    })
+end, { desc = "terminal toggle floating term" })
+
+map({ "n", "t" }, "<A-v>", function()
+    require("nvchad.term").toggle({
+        pos = "vertical",
+        id = "vertTerm",
+        size = {
+            width = 100,
+        },
+    })
+end, { desc = "terminal toggle vertical term" })
