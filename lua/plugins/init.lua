@@ -127,13 +127,32 @@ return {
         },
     },
 
-    {
-        "NvChad/nvterm",
-        config = function()
-            require("nvterm").setup()
-        end,
-    },
-
+    -- {
+    --     "NvChad/nvterm",
+    --     config = function()
+    --         require("nvterm").setup({
+    --             terminals = {
+    --                 shell = vim.o.shell,
+    --                 list = {},
+    --                 type_opts = {
+    --                     vertical = {
+    --                         location = "rightbelow",
+    --                         split_ratio = 0.9,
+    --                     },
+    --                 },
+    --             },
+    --             behavior = {
+    --                 autoclose_on_quit = {
+    --                     enabled = false,
+    --                     confirm = true,
+    --                 },
+    --                 close_on_exit = true,
+    --                 auto_insert = true,
+    --             },
+    --         })
+    --     end,
+    -- },
+    --
     {
         "nvim-telescope/telescope.nvim",
         event = "BufEnter",
