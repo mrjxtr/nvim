@@ -62,10 +62,16 @@ end, { desc = "terminal toggle floating term" })
 
 map({ "n", "t" }, "<A-v>", function()
     require("nvchad.term").toggle({
-        pos = "vertical",
+        pos = "vsp",
         id = "vertTerm",
-        size = {
-            width = 100,
-        },
+        size = 0.4,
+    })
+end, { desc = "terminal toggle vertical term" })
+
+map({ "n", "t" }, "<A-h>", function()
+    require("nvchad.term").toggle({
+        pos = "sp",
+        id = "vertTerm",
+        size = 0.4,
     })
 end, { desc = "terminal toggle vertical term" })
