@@ -13,7 +13,7 @@ lspconfig.servers = {
     "eslint",
     "cssls",
     "html",
-    "djlsp",
+    -- "djlsp", // removed to avoid ensure_installed error
     "bashls",
     "htmx",
     "templ",
