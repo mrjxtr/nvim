@@ -1,7 +1,7 @@
 local options = {
     formatters_by_ft = {
         lua = { "stylua" },
-        go = { "gofumpt", "goimports-reviser", "golines" },
+        go = { "gofumpt", "goimports", "golines" },
         python = { "black", "isort" },
         django = { "djlint" },
         jinja = { "djlint" },
@@ -9,41 +9,24 @@ local options = {
         html = { "prettier" },
         markdown = { "prettier" },
         yaml = { "prettier" },
+        json = { "prettier" },
+        jsonc = { "prettier" },
         typescript = { "prettier" },
         javascript = { "prettier" },
         bash = { "shellharden" },
-        -- c = { "clang-format" },
-        -- cpp = { "clang-format" },
-        -- haskell = { "fourmolu", "stylish-haskell" },
     },
 
     formatters = {
-        -- C & C++
-        -- ["clang-format"] = {
-        --     prepend_args = {
-        --         "-style={ \
-        --                 IndentWidth: 4, \
-        --                 TabWidth: 4, \
-        --                 UseTab: Never, \
-        --                 AccessModifierOffset: 0, \
-        --                 IndentAccessModifiers: true, \
-        --                 PackConstructorInitializers: Never}",
-        --     },
-        -- },
-        --
         -- Golang
-        ["goimports-reviser"] = {
-            prepend_args = { "-rm-unused" },
-        },
         golines = {
-            prepend_args = { "--max-len=80" },
+            prepend_args = { "--max-len=100" },
         },
-        --
+
         -- Lua
         stylua = {
             prepend_args = {
                 "--column-width",
-                "80",
+                "100",
                 "--line-endings",
                 "Unix",
                 "--indent-type",
@@ -54,13 +37,13 @@ local options = {
                 "AutoPreferDouble",
             },
         },
-        --
+
         -- Python
         black = {
             prepend_args = {
                 "--fast",
                 "--line-length",
-                "80",
+                "100",
             },
         },
         isort = {
