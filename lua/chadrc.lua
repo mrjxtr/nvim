@@ -21,6 +21,10 @@ M.ui = {
     },
 }
 
+M.term = {
+    base46_colors = false,
+}
+
 M.nvdash = {
     load_on_startup = true,
     header = {
