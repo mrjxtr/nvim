@@ -7,6 +7,7 @@ return {
             require("configs.treesitter")
         end,
     },
+
     {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
@@ -131,32 +132,6 @@ return {
         },
     },
 
-    -- {
-    --     "NvChad/nvterm",
-    --     config = function()
-    --         require("nvterm").setup({
-    --             terminals = {
-    --                 shell = vim.o.shell,
-    --                 list = {},
-    --                 type_opts = {
-    --                     vertical = {
-    --                         location = "rightbelow",
-    --                         split_ratio = 0.9,
-    --                     },
-    --                 },
-    --             },
-    --             behavior = {
-    --                 autoclose_on_quit = {
-    --                     enabled = false,
-    --                     confirm = true,
-    --                 },
-    --                 close_on_exit = true,
-    --                 auto_insert = true,
-    --             },
-    --         })
-    --     end,
-    -- },
-    --
     {
         "nvim-telescope/telescope.nvim",
         event = "BufEnter",
@@ -182,6 +157,48 @@ return {
                     },
                 },
             }
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require("configs.dap")
+        end,
+    },
+
+    {
+        "nvim-neotest/nvim-nio",
+    },
+
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
+        config = function()
+            require("configs.dap-ui")
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "rcarriga/nvim-dap-ui",
+        },
+        config = function()
+            require("configs.dap-python")
+        end,
+    },
+
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("configs.mason-dap")
         end,
     },
 }
