@@ -84,7 +84,7 @@ return {
 
     {
         "Exafunction/codeium.vim",
-        event = "BufEnter",
+        event = "VeryLazy",
     },
 
     {
@@ -215,6 +215,10 @@ return {
             require("cord").setup({
                 display = {
                     theme = "pastel",
+                },
+                timestamp = {
+                    reset_on_idle = false,
+                    reset_on_change = false,
                 },
             })
         end,
