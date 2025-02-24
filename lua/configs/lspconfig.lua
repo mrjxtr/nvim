@@ -18,6 +18,7 @@ lspconfig.servers = {
     "htmx",
     "templ",
     "dockerls",
+    "denols",
     -- "clangd",
     -- "hls",
     -- "ols",
@@ -32,6 +33,7 @@ local default_servers = {
     "htmx",
     "templ",
     "dockerls",
+    "denols",
 }
 
 -- lsps with default config
