@@ -78,6 +78,11 @@ return {
     },
 
     {
+        "folke/which-key.nvim",
+        event = "BufEnter",
+    },
+
+    {
         "Exafunction/codeium.vim",
         event = "BufEnter",
     },
@@ -199,6 +204,19 @@ return {
         event = "VeryLazy",
         config = function()
             require("configs.mason-dap")
+        end,
+    },
+
+    {
+        "vyfor/cord.nvim",
+        event = "BufEnter",
+        build = ":Cord update",
+        config = function()
+            require("cord").setup({
+                display = {
+                    theme = "pastel",
+                },
+            })
         end,
     },
 }
