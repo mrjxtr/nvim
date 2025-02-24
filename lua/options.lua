@@ -1,5 +1,4 @@
 require("nvchad.options")
-
 local o = vim.o
 local opt = vim.opt
 
@@ -27,3 +26,14 @@ vim.g.codeium_enabled = false
 -- Added mappings for this so disabled by default
 -- opt.spell = true
 -- opt.spelllang = "en_us"
+
+-- Custom tabstop and shiftwidth for specific files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "lua", "python", "go" },
+    command = "setlocal shiftwidth=4 tabstop=4",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "html", "css", "javascript", "typescript", "json", "jsonc" },
+    command = "setlocal shiftwidth=2 tabstop=2",
+})
