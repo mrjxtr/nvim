@@ -84,7 +84,7 @@ return {
 
     {
         "Exafunction/codeium.vim",
-        event = "VeryLazy",
+        event = "BufEnter",
     },
 
     {
