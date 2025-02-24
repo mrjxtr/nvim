@@ -7,6 +7,8 @@ local opt = vim.opt
 o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
+o.autoindent = true
+o.smartindent = true
 
 -- scrolling
 o.scrolloff = 10 -- keep 10 lines below and above cursor
