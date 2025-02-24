@@ -24,5 +24,6 @@ o.swapfile = false -- don't need swap files
 -- Disable codeium by default
 vim.g.codeium_enabled = false
 
-opt.spell = true
-opt.spelllang = "en_us"
+-- Added mappings for this so disabled by default
+-- opt.spell = true
+-- opt.spelllang = "en_us"

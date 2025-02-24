@@ -18,18 +18,8 @@ map("v", ">", ">gv")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Enable/Disable Codeium
-map(
-    { "n", "v" },
-    "<C-c>",
-    "<cmd> CodeiumEnable <cr>",
-    { desc = "Enable Codeium" }
-)
-map(
-    { "n", "v" },
-    "<C-c-d>",
-    "<cmd> CodeiumDisable <cr>",
-    { desc = "Disable Codeium" }
-)
+map({ "n", "v" }, "<C-c>", "<cmd> CodeiumEnable <cr>", { desc = "Enable Codeium" })
+map({ "n", "v" }, "<C-c-d>", "<cmd> CodeiumDisable <cr>", { desc = "Disable Codeium" })
 
 -- Find all TODOs
 map(
@@ -40,12 +30,12 @@ map(
 )
 
 -- Show function tooltip
-map(
-    "n",
-    "gh",
-    "<cmd>lua vim.lsp.buf.hover()<cr>",
-    { desc = "Show function tooltip" }
-)
+map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show function tooltip" })
+
+-- Enable spellcheck
+map("n", "<leader>sp", "<cmd>setlocal spell! spelllang=en_us<cr>", { desc = "Toggle spellcheck" })
+-- Disable spellcheck
+map("n", "<leader>sp", "<cmd>setlocal spell! spelllang=en_us<cr>", { desc = "Toggle spellcheck" })
 
 -- Show floating terminal
 map({ "n", "t" }, "<A-i>", function()
