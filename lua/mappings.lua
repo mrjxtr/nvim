@@ -32,9 +32,7 @@ map(
 -- Show function tooltip
 map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show function tooltip" })
 
--- Enable spellcheck
-map("n", "<leader>sp", "<cmd>setlocal spell! spelllang=en_us<cr>", { desc = "Toggle spellcheck" })
--- Disable spellcheck
+-- Enable/Disable spellcheck
 map("n", "<leader>sp", "<cmd>setlocal spell! spelllang=en_us<cr>", { desc = "Toggle spellcheck" })
 
 -- Show floating terminal
