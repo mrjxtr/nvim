@@ -1,5 +1,6 @@
 return {
 
+    -- Syntax Highlighting
     {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufReadPre", "BufNewFile" },
@@ -8,6 +9,7 @@ return {
         end,
     },
 
+    -- LSP
     {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
@@ -17,6 +19,7 @@ return {
         end,
     },
 
+    -- LSP Configuration
     {
         "williamboman/mason-lspconfig.nvim",
         event = "VeryLazy",
@@ -26,6 +29,7 @@ return {
         end,
     },
 
+    -- Linter
     {
         "mfussenegger/nvim-lint",
         event = { "BufReadPre", "BufNewFile" },
@@ -34,6 +38,7 @@ return {
         end,
     },
 
+    -- Linter
     {
         "rshkarin/mason-nvim-lint",
         event = "VeryLazy",
@@ -43,6 +48,7 @@ return {
         end,
     },
 
+    -- Formatter
     {
         "stevearc/conform.nvim",
         event = "BufWritePre",
@@ -51,6 +57,7 @@ return {
         end,
     },
 
+    -- Formatter
     {
         "zapling/mason-conform.nvim",
         event = "VeryLazy",
@@ -60,6 +67,7 @@ return {
         end,
     },
 
+    -- File Explorer
     {
         "nvim-tree/nvim-tree.lua",
         opts = {
@@ -77,16 +85,19 @@ return {
         },
     },
 
+    -- Keybindings
     {
         "folke/which-key.nvim",
         event = "BufEnter",
     },
 
+    -- AI Assistant
     {
         "Exafunction/codeium.vim",
         event = "BufEnter",
     },
 
+    -- Code Completion
     {
         -- Configure tab behaviour when lsp suggestions are available
         "hrsh7th/nvim-cmp",
@@ -118,6 +129,7 @@ return {
         end,
     },
 
+    -- Comment Highlighting
     {
         "folke/todo-comments.nvim",
         event = "VeryLazy",
@@ -137,6 +149,7 @@ return {
         },
     },
 
+    -- Fuzzy Finder
     {
         "nvim-telescope/telescope.nvim",
         event = "BufEnter",
@@ -165,6 +178,7 @@ return {
         end,
     },
 
+    -- Debugging Adapter Protocol
     {
         "mfussenegger/nvim-dap",
         config = function()
@@ -172,10 +186,12 @@ return {
         end,
     },
 
+    -- Async IO in Nvim
     {
         "nvim-neotest/nvim-nio",
     },
 
+    -- Debugging UI
     {
         "rcarriga/nvim-dap-ui",
         dependencies = {
@@ -187,6 +203,7 @@ return {
         end,
     },
 
+    -- Debugging Python
     {
         "mfussenegger/nvim-dap-python",
         ft = "python",
@@ -199,6 +216,7 @@ return {
         end,
     },
 
+    -- Debugging
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",
@@ -207,6 +225,7 @@ return {
         end,
     },
 
+    -- Discord Presence
     {
         "vyfor/cord.nvim",
         event = "BufEnter",
@@ -222,5 +241,48 @@ return {
                 },
             })
         end,
+    },
+
+    -- Create Code Snapshots
+    {
+        "mistricky/codesnap.nvim",
+        build = "make",
+        keys = {
+            {
+                "<leader>cc",
+                "<cmd>CodeSnap<cr>",
+                mode = "x",
+                desc = "Save selected code snapshot into clipboard",
+            },
+            {
+                "<leader>cs",
+                "<cmd>CodeSnapSave<cr>",
+                mode = "x",
+                desc = "Save selected code snapshot in ~/Pictures/screenshots/",
+            },
+            {
+                "<leader>ch",
+                "<cmd>CodeSnapHighlight<cr>",
+                mode = "x",
+                desc = "Save selected code snapshot into clipboard",
+            },
+            {
+                "<leader>ci",
+                "<cmd>CodeSnapASCII<cr>",
+                mode = "x",
+                desc = "Save selected code snapshot into clipboard",
+            },
+        },
+        opts = {
+            code_font_family = "JetBrainsMono Nerd Font",
+            save_path = "~/Pictures/screenshots/",
+            has_line_number = true,
+            has_breadcrumbs = true,
+            bg_color = "#535c68",
+            bg_x_padding = 60,
+            bg_y_padding = 60,
+            bg_padding = nil,
+            watermark = "",
+        },
     },
 }
