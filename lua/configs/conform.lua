@@ -17,16 +17,38 @@ local options = {
     },
 
     formatters = {
+        -- Python
+        black = {
+            prepend_args = {
+                "--fast",
+                "--line-length",
+                "88",
+            },
+        },
+        isort = {
+            prepend_args = {
+                "--profile",
+                "black",
+            },
+        },
+
         -- Golang
         golines = {
-            prepend_args = { "--max-len=100" },
+            prepend_args = { "--max-len=88" },
+        },
+
+        prettier = {
+            prepend_args = {
+                "--print-width",
+                "88",
+            },
         },
 
         -- Lua
         stylua = {
             prepend_args = {
                 "--column-width",
-                "100",
+                "88",
                 "--line-endings",
                 "Unix",
                 "--indent-type",
@@ -37,27 +59,12 @@ local options = {
                 "AutoPreferDouble",
             },
         },
-
-        -- Python
-        black = {
-            prepend_args = {
-                "--fast",
-                "--line-length",
-                "100",
-            },
-        },
-        isort = {
-            prepend_args = {
-                "--profile",
-                "black",
-            },
-        },
     },
 
     format_on_save = {
         -- These options will be passed to conform.format()
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_format = "fallback",
     },
 }
 

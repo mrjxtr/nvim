@@ -14,7 +14,8 @@ o.scrolloff = 10 -- keep 10 lines below and above cursor
 
 -- lines
 -- o.cursorlineopt = "both" -- to enable cursor line
-o.colorcolumn = "80"
+
+opt.colorcolumn = { 80, 88 }
 o.autoindent = true
 
 o.wrap = false -- don't wrap lines
@@ -22,10 +23,6 @@ o.swapfile = false -- don't need swap files
 
 -- Disable codeium by default
 vim.g.codeium_enabled = false
-
--- Added mappings for this so disabled by default
--- opt.spell = true
--- opt.spelllang = "en_us"
 
 -- Custom tabstop and shiftwidth for specific files
 vim.api.nvim_create_autocmd("FileType", {
