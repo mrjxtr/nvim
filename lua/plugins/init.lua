@@ -143,7 +143,7 @@ return {
                     -- signs = false, -- configure signs for some keywords individually
                 },
                 TODO = { icon = " ", color = "#FFC369" },
-                INFO = { icon = " ", color = "#648CE3", alt = { " " } },
+                INFO = { icon = " ", color = "#648CE3", alt = { "i" } },
                 NOTE = { icon = " ", color = "#52BA88" },
             },
         },
