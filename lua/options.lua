@@ -26,11 +26,11 @@ vim.g.codeium_enabled = false
 
 -- Custom tabstop and shiftwidth for specific files
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "lua", "python", "go" },
+    pattern = { "lua", "python" },
     command = "setlocal shiftwidth=4 tabstop=4",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "html", "css", "javascript", "typescript", "json", "jsonc" },
+    pattern = { "go", "html", "css", "javascript", "typescript", "json", "jsonc" },
     command = "setlocal shiftwidth=2 tabstop=2",
 })
