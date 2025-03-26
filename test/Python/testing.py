@@ -22,8 +22,10 @@ def fib(n):
 # NOTE: Testing warning
 def main():
     HelloPrinter.print_hello()
-    print(fib(10))
+    fib1 = fib(10)
+    print(fib1)
     time.sleep(random.randint(2, 5))
-    print(fib(20))
+    fib2 = fib(20)
+    print(fib2)
     time.sleep(random.randint(2, 5))
     print(fib(30))
