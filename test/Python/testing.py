@@ -24,8 +24,12 @@ def main():
     HelloPrinter.print_hello()
     fib1 = fib(10)
     print(fib1)
-    time.sleep(random.randint(2, 5))
+    # time.sleep(random.randint(2, 5))
     fib2 = fib(20)
     print(fib2)
-    time.sleep(random.randint(2, 5))
+    # time.sleep(random.randint(2, 5))
     print(fib(30))
+
+
+if __name__ == "__main__":
+    main()

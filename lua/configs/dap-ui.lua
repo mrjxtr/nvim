@@ -1,6 +1,6 @@
 local dap = require("dap")
 local dapui = require("dapui")
-dapui.setup()
+dapui.setup({})
 
 local map = vim.keymap.set
 map(

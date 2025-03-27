@@ -181,6 +181,11 @@ return {
     -- Debugging Adapter Protocol
     {
         "mfussenegger/nvim-dap",
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "rcarriga/nvim-dap-ui",
+            "mfussenegger/nvim-dap-python",
+        },
         config = function()
             require("configs.dap")
         end,
