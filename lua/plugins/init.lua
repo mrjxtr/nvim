@@ -251,6 +251,7 @@ return {
     -- Create Code Snapshots
     {
         "mistricky/codesnap.nvim",
+        event = "BufEnter",
         build = "make",
         keys = {
             {

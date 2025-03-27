@@ -19,7 +19,8 @@ def fib(n):
 # FIX: Testing fix
 # TODO: Testing todo
 # INFO: Testing info
-# NOTE: Testing warning
+# i: Testing info
+# NOTE: Testing note
 def main():
     HelloPrinter.print_hello()
     fib1 = fib(10)
