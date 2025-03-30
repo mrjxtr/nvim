@@ -3,7 +3,7 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+-- map("i", "jk", "<ESC>") -- disable if CapsLk = esc
 
 -- move lines using shift + j or k
 map("n", "<S-j>", ":m .+1<CR>==")
@@ -33,7 +33,12 @@ map(
 map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show function tooltip" })
 
 -- Enable/Disable spellcheck
-map("n", "<leader>sp", "<cmd>setlocal spell! spelllang=en_us<cr>", { desc = "Toggle spellcheck" })
+map(
+    "n",
+    "<leader>sp",
+    "<cmd>setlocal spell! spelllang=en_us<cr>",
+    { desc = "Toggle spellcheck" }
+)
 
 -- Show floating terminal
 map({ "n", "t" }, "<A-i>", function()

@@ -70,13 +70,27 @@ return {
     -- File Explorer
     {
         "nvim-tree/nvim-tree.lua",
+        event = "VeryLazy",
         opts = {
+            auto_reload_on_write = true,
+            reload_on_bufenter = true,
             view = {
+                cursorline = true,
                 side = "right",
-                width = 35,
+                preserve_window_proportions = false,
+                number = true,
+                relativenumber = true,
+                width = {
+                    min = 35,
+                    max = 40,
+                    padding = 1,
+                },
             },
             filters = {
                 dotfiles = false,
+            },
+            renderer = {
+                root_folder_label = ":~:s?$?/..?",
             },
             git = {
                 enable = true,
@@ -290,5 +304,18 @@ return {
             bg_padding = nil,
             watermark = "",
         },
+    },
+
+    -- edgy.nvim configuration
+    {
+        "folke/edgy.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.opt.laststatus = 3
+            vim.opt.splitkeep = "screen"
+        end,
+        opts = function()
+            return require("configs.edgy")
+        end,
     },
 }
