@@ -251,12 +251,9 @@ return {
         build = ":Cord update",
         config = function()
             require("cord").setup({
-                display = {
-                    theme = "pastel",
-                },
-                timestamp = {
-                    reset_on_idle = false,
-                    reset_on_change = false,
+                -- Custome Configurations here
+                idle = {
+                    ignore_focus = false,
                 },
             })
         end,
