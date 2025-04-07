@@ -1,4 +1,4 @@
 require("mason-nvim-dap").setup({
-    ensure_installed = { "python" },
-    automatic_installation = { exclude = {} },
+  ensure_installed = { "python" },
+  automatic_installation = { exclude = {} },
 })

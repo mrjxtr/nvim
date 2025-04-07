@@ -9,26 +9,26 @@ map("n", "<leader>dO", "<cmd> DapStepOut <CR>", { desc = "Step out" })
 map("n", "<leader>di", "<cmd> DapStepInto <CR>", { desc = "Step into" })
 map("n", "<leader>dq", "<cmd> DapTerminate <CR>", { desc = "Terminate" })
 map("n", "<leader>dr", function()
-    dap.restart()
+  dap.restart()
 end, { desc = "Restart" })
 
 vim.fn.sign_define("DapBreakpoint", {
-    text = "",
-    texthl = "DiagnosticSignError",
-    linehl = "",
-    numhl = "",
+  text = "",
+  texthl = "DiagnosticSignError",
+  linehl = "",
+  numhl = "",
 })
 
 vim.fn.sign_define("DapBreakpointRejected", {
-    text = "", -- or "❌"
-    texthl = "DiagnosticSignError",
-    linehl = "",
-    numhl = "",
+  text = "", -- or "❌"
+  texthl = "DiagnosticSignError",
+  linehl = "",
+  numhl = "",
 })
 
 vim.fn.sign_define("DapStopped", {
-    text = "", -- or "→"
-    texthl = "DiagnosticSignWarn",
-    linehl = "Visual",
-    numhl = "DiagnosticSignWarn",
+  text = "", -- or "→"
+  texthl = "DiagnosticSignWarn",
+  linehl = "Visual",
+  numhl = "DiagnosticSignWarn",
 })

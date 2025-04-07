@@ -25,12 +25,46 @@ o.swapfile = false -- don't need swap files
 vim.g.codeium_enabled = false
 
 -- Custom tabstop and shiftwidth for specific files
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "python" },
+--   command = "setlocal shiftwidth=4 tabstop=4",
+-- })
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = {
+--     "go",
+--     "lua",
+--     "html",
+--     "css",
+--     "javascript",
+--     "typescript",
+--     "json",
+--     "jsonc",
+--   },
+--   command = "setlocal shiftwidth=2 tabstop=2",
+-- })
+
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "lua", "python" },
-    command = "setlocal shiftwidth=4 tabstop=4",
+  pattern = { "python" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+  end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "go", "html", "css", "javascript", "typescript", "json", "jsonc" },
-    command = "setlocal shiftwidth=2 tabstop=2",
+  pattern = {
+    "go",
+    "lua",
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "json",
+    "jsonc",
+  },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+  end,
 })
