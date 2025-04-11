@@ -1,3 +1,3 @@
-module github.com/mrjxtr/test
+module example.com/test
 
-go 1.23.4
+go 1.24.2
