@@ -15,10 +15,10 @@ lspconfig.servers = {
   "html",
   -- "djlsp", // removed to avoid ensure_installed error
   "bashls",
-  "htmx",
+  -- "htmx",
   "templ",
   "dockerls",
-  "denols",
+  -- "denols",
   -- "clangd",
   -- "hls",
   -- "ols",
@@ -31,11 +31,11 @@ local default_servers = {
   "djlsp",
   "volar",
   "bashls",
-  "htmx",
+  -- "htmx",
   "tailwindcss",
   "templ",
   "dockerls",
-  "denols",
+  -- "denols",
 }
 
 -- lsps with default config
