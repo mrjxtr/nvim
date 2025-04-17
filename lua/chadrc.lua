@@ -28,7 +28,7 @@ M.term = {
 M.nvdash = {
   load_on_startup = true,
   header = {
-    "                                                 ",
+    "",
     "            ███       ███     ███████            ",
     "            ████     ████          ██            ",
     "            ███████████████████    ██            ",
@@ -45,8 +45,8 @@ M.nvdash = {
     "     ██           ██         ██           ██     ",
     "       ███████████             ███████████       ",
     "                                                 ",
-    "     Powered By  NvChad     ",
-    "                              ",
+    " Powered by  Coffee ",
+    "",
   },
 
   buttons = {
