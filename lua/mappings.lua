@@ -47,9 +47,9 @@ map({ "n", "t" }, "<A-i>", function()
     id = "floatTerm",
     float_opts = {
       row = 0.07,
-      col = 0.15,
-      width = 0.7,
-      height = 0.75,
+      col = 0.19,
+      width = 0.6,
+      height = 0.8,
       border = "rounded",
     },
   })
