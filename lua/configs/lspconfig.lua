@@ -16,6 +16,7 @@ lspconfig.servers = {
   -- "djlsp", // removed to avoid ensure_installed error
   "bashls",
   -- "htmx",
+  "tailwindcss",
   "templ",
   "dockerls",
   -- "denols",
@@ -145,6 +146,14 @@ lspconfig.lua_ls.setup({
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
+    },
+  },
+})
+
+lspconfig.tailwindcss.setup({
+  settings = {
+    editor = {
+      tabSize = 2,
     },
   },
 })

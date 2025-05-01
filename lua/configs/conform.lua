@@ -8,6 +8,10 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     markdown = { "prettier" },
+    jsx = { "prettier" },
+    tsx = { "prettier" },
+    typescriptreact = { "prettier" },
+    javascriptreact = { "prettier" },
     yaml = { "prettier" },
     json = { "prettier" },
     jsonc = { "prettier" },
@@ -41,6 +45,14 @@ local options = {
       prepend_args = {
         "--print-width",
         "88",
+        "--tab-width",
+        "2",
+        "--use-tabs",
+        "false",
+        "--single-quote",
+        "true",
+        "--jsx-single-quote",
+        "true",
       },
     },
 
@@ -64,6 +76,7 @@ local options = {
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
+    lsp_format = "never",
     lsp_format = "fallback",
   },
 }
