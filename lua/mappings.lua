@@ -46,7 +46,7 @@ map({ "n", "t" }, "<A-i>", function()
     pos = "float",
     id = "floatTerm",
     float_opts = {
-      row = 0.07,
+      row = 0.03,
       col = 0.19,
       width = 0.6,
       height = 0.8,
