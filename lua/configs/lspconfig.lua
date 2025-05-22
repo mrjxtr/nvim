@@ -7,7 +7,7 @@ local lspconfig = require("lspconfig")
 -- list of all servers configured.
 lspconfig.servers = {
   "lua_ls",
-  "pyright",
+  -- "pyright",
   "gopls",
   "ts_ls",
   "eslint",
@@ -66,19 +66,22 @@ lspconfig.ts_ls.setup({
   },
 })
 
-lspconfig.pyright.setup({
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
+-- NOTE: removed custom pyright config to fixe
+-- issues with loading pyright twice
 
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off", -- Disable type checking diagnostics
-      },
-    },
-  },
-})
+-- lspconfig.pyright.setup({
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--
+--   settings = {
+--     python = {
+--       analysis = {
+--         typeCheckingMode = "off", -- Disable type checking diagnostics
+--       },
+--     },
+--   },
+-- })
 
 -- lspconfig.clangd.setup({
 --     on_attach = function(client, bufnr)
