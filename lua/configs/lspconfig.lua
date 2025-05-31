@@ -17,7 +17,7 @@ lspconfig.servers = {
   "bashls",
   -- "htmx",
   "tailwindcss",
-  "templ",
+  -- "templ",
   "dockerls",
   -- "denols",
   -- "clangd",
