@@ -129,6 +129,10 @@ return {
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
 
+        -- Enable cmp navigation with Up and Down keys
+        ["<DOWN>"] = cmp.mapping.select_next_item(),
+        ["<UP>"] = cmp.mapping.select_prev_item(),
+
         -- Keep default Enter behavior for confirmation
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Insert,
