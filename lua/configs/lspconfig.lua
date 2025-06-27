@@ -23,6 +23,7 @@ lspconfig.servers = {
   -- "clangd",
   -- "hls",
   -- "ols",
+  "vue_ls",
 }
 
 -- list of servers configured with default config.
@@ -30,7 +31,7 @@ local default_servers = {
   "cssls",
   "html",
   "djlsp",
-  "volar",
+  -- "volar",
   "bashls",
   -- "htmx",
   "tailwindcss",

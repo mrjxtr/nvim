@@ -37,6 +37,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "go",
     "lua",
     "html",
+    "htmldjango",
     "templ",
     "css",
     "javascript",

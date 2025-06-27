@@ -18,6 +18,7 @@ local options = {
     typescript = { "prettier" },
     javascript = { "prettier" },
     bash = { "shellharden" },
+    vue = { "prettier" },
   },
 
   formatters = {
@@ -53,6 +54,7 @@ local options = {
         "true",
         "--jsx-single-quote",
         "true",
+        "--no-semi",
       },
     },
 
@@ -76,7 +78,7 @@ local options = {
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
-    lsp_format = "never",
+    --^lsp_format = "never",
     lsp_format = "fallback",
   },
 }
