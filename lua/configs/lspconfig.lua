@@ -38,6 +38,7 @@ local default_servers = {
   "templ",
   "dockerls",
   -- "denols",
+  -- "ruff",
 }
 
 -- lsps with default config
@@ -70,7 +71,7 @@ lspconfig.ts_ls.setup({
 -- NOTE: removed custom pyright config to fixe
 -- issues with loading pyright twice
 
--- lspconfig.pyright.setup({
+-- - lspconfig.pyright.setup({
 --   on_attach = on_attach,
 --   on_init = on_init,
 --   capabilities = capabilities,
