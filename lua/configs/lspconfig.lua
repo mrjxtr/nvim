@@ -40,6 +40,7 @@ local default_servers = {
   "dockerls",
   -- "denols",
   -- "ruff",
+  "rust_analyzer",
 }
 
 -- lsps with default config
@@ -100,7 +101,7 @@ vim.lsp.config("ts_ls", {
 -- })
 
 -- lspconfig.gopls.setup({ -- pre nvim 0.11
-vim.lsp.config("gopls", {
+vim.lsp.config("gopls", { -- nvim 0.11
   on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
@@ -110,8 +111,8 @@ vim.lsp.config("gopls", {
   capabilities = capabilities,
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gotmpl", "gowork" },
-  -- root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
-  root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"),
+  -- root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"), -- pre nvim 0.11
+  -- root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"), -- nvim 0.11
   settings = {
     gopls = {
       analyses = {

@@ -379,4 +379,53 @@ return {
       return require("configs.edgy")
     end,
   },
+
+  -- Rust LSP config
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
+    ft = "rust",
+    config = function()
+      local mason_path = vim.fn.stdpath("data") .. "/mason"
+      local extension_path = mason_path .. "/packages/codelldb/extension/"
+      local codelldb_path = extension_path .. "adapter/codelldb"
+      local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+      local cfg = require("rustaceanvim.config")
+
+      vim.g.rustaceanvim = {
+        dap = {
+          adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
+        },
+      }
+    end,
+  },
+
+  -- Autosave for rust
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+
+  -- Crates for rust config
+  {
+    "saecki/crates.nvim",
+    ft = { "toml" },
+    tag = "stable",
+    config = function()
+      require("crates").setup({
+        completion = {
+          cmp = {
+            enabled = true,
+          },
+        },
+      })
+      require("cmp").setup.buffer({
+        sources = { { name = "crates" } },
+      })
+    end,
+  },
 }
