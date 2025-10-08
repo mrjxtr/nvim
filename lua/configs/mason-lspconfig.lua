@@ -1,4 +1,5 @@
-local lspconfig = package.loaded["lspconfig"]
+-- local lspconfig = package.loaded["lspconfig"] -- pre nvim 0.11
+local lspconfig = require("nvchad.configs.lspconfig")
 
 -- List of servers to ignore during install
 local ignore_install = {}

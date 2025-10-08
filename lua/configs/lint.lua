@@ -13,10 +13,15 @@ lint.linters_by_ft = {
 }
 
 lint.linters.luacheck.args = {
-  unpack(lint.linters.luacheck.args),
+  -- unpack(lint.linters.luacheck.args),
   "--globals",
   "love",
   "vim",
+  "--formatter",
+  "plain",
+  "--codes",
+  "--ranges",
+  "-",
 }
 
 lint.linters.eslint_d = require("lint.util").wrap(
