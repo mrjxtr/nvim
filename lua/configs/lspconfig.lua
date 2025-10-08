@@ -12,19 +12,19 @@ lspconfig.servers = {
   "gopls",
   "ts_ls",
   "eslint",
-  "cssls",
-  "html",
+  -- "cssls",
+  -- "html",
   -- "djlsp", // removed to avoid ensure_installed error
-  "bashls",
+  -- "bashls",
   -- "htmx",
-  "tailwindcss",
+  -- "tailwindcss",
   -- "templ",
-  "dockerls",
+  -- "dockerls",
   -- "denols",
   -- "clangd",
   -- "hls",
   -- "ols",
-  "vue_ls",
+  -- "vue_ls",
 }
 
 -- list of servers configured with default config.
@@ -41,6 +41,8 @@ local default_servers = {
   -- "denols",
   -- "ruff",
   "rust_analyzer",
+  "vue_ls",
+  "markdown_oxide",
 }
 
 -- lsps with default config
@@ -165,6 +167,22 @@ vim.lsp.config("lua_ls", {
 
 -- lspconfig.tailwindcss.setup({ -- pre nvim 0.11
 vim.lsp.config("tailwindcss", {
+  filetypes = {
+    "django - html",
+    "htmldjango",
+    "gohtml",
+    "gohtmltmpl",
+    "html",
+    "css",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "templ",
+  },
   settings = {
     editor = {
       tabSize = 2,
