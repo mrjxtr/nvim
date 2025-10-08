@@ -4,6 +4,7 @@ fn main() {
     println!("Simple Rust Calculator");
     println!("Type an expression like: 1 + 2 * 3 / 9");
     println!("Type 'exit' or 'quit' to stop.\n");
+    let _x: i32 = rand::random();
 
     loop {
         print!("> ");
