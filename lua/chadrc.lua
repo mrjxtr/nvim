@@ -5,8 +5,10 @@
 local M = {}
 
 M.base46 = {
-  theme = "ashes",
-  -- theme = "material-darker",
+  -- theme = "ashes",
+  theme = "nightlamp",
+  -- theme = "pastelDark",
+  -- theme = "vesper",
   -- transparency = true,
   -- hl_override = {
   --     Comment = { italic = true },

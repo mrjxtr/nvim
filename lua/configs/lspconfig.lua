@@ -8,23 +8,11 @@ local lspconfig = require("nvchad.configs.lspconfig") -- nvim 0.11
 -- list of all servers configured.
 lspconfig.servers = {
   "lua_ls",
-  -- "pyright",
+  "pyright",
   "gopls",
   "ts_ls",
   "eslint",
-  -- "cssls",
-  -- "html",
-  -- "djlsp", // removed to avoid ensure_installed error
-  -- "bashls",
-  -- "htmx",
-  -- "tailwindcss",
-  -- "templ",
-  -- "dockerls",
-  -- "denols",
-  -- "clangd",
-  -- "hls",
-  -- "ols",
-  -- "vue_ls",
+  "tailwindcss",
 }
 
 -- list of servers configured with default config.
@@ -32,14 +20,11 @@ local default_servers = {
   "cssls",
   "html",
   "djlsp",
-  -- "volar",
   "bashls",
-  -- "htmx",
-  "tailwindcss",
+  "clangd",
+  "htmx",
   "templ",
   "dockerls",
-  -- "denols",
-  -- "ruff",
   "rust_analyzer",
   "vue_ls",
   "markdown_oxide",
@@ -75,32 +60,19 @@ vim.lsp.config("ts_ls", {
   },
 })
 
--- NOTE: removed custom pyright config to fixe
--- issues with loading pyright twice
+vim.lsp.config("pyright", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
 
--- - lspconfig.pyright.setup({
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
---
---   settings = {
---     python = {
---       analysis = {
---         typeCheckingMode = "off", -- Disable type checking diagnostics
---       },
---     },
---   },
--- })
-
--- lspconfig.clangd.setup({
---     on_attach = function(client, bufnr)
---         client.server_capabilities.documentFormattingProvider = false
---         client.server_capabilities.documentRangeFormattingProvider = false
---         on_attach(client, bufnr)
---     end,
---     on_init = on_init,
---     capabilities = capabilities,
--- })
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off", -- Disable type checking diagnostics
+      },
+    },
+  },
+})
 
 -- lspconfig.gopls.setup({ -- pre nvim 0.11
 vim.lsp.config("gopls", { -- nvim 0.11
@@ -126,17 +98,6 @@ vim.lsp.config("gopls", { -- nvim 0.11
     },
   },
 })
-
--- lspconfig.hls.setup({
---     on_attach = function(client, bufnr)
---         client.server_capabilities.documentFormattingProvider = false
---         client.server_capabilities.documentRangeFormattingProvider = false
---         on_attach(client, bufnr)
---     end,
---
---     on_init = on_init,
---     capabilities = capabilities,
--- })
 
 -- lspconfig.lua_ls.setup({ -- pre nvim 0.11
 vim.lsp.config("lua_ls", {

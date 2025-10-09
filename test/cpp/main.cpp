@@ -1,6 +1,7 @@
-#include <iostream>
+#include <cstdio>
 
+// NOTE: This is writing C-Style C++ and is not idomatic C++
 int main() {
-    std::cout << "Hello, world!" << std::endl;
-    return 0;
+  std::printf("Hello, world!\n");
+  return 0;
 }

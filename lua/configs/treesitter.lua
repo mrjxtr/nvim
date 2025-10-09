@@ -41,6 +41,7 @@ local options = {
     "cpp",
     "c",
     "c_sharp",
+    "zig",
   },
 
   highlight = {

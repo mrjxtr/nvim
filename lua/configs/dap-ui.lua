@@ -1,3 +1,4 @@
+-- NOTE: We are using Edgy.nvim to properly configure the UI elements
 local dap = require("dap")
 local dapui = require("dapui")
 
