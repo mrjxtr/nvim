@@ -22,7 +22,7 @@ local default_servers = {
   "djlsp",
   "bashls",
   "clangd",
-  "htmx",
+  -- "htmx", -- NOTE: Uncomment if HTMX is needed
   "templ",
   "dockerls",
   "rust_analyzer",
@@ -52,6 +52,7 @@ vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
+  -- filetypes = { "typescript" },
 
   init_options = {
     preferences = {

@@ -46,6 +46,8 @@ vim.api.nvim_create_autocmd("FileType", {
     "jsonc",
     "tsx",
     "jsx",
+    "cpp",
+    "c",
   },
   callback = function()
     vim.opt_local.shiftwidth = 2
