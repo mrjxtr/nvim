@@ -428,4 +428,23 @@ return {
       })
     end,
   },
+
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    -- event = "BufEnter",
+    priority = 1000,
+    config = function()
+      require("tiny-inline-diagnostic").setup({
+        preset = "classic",
+        transparent_bg = true,
+        options = {
+          show_source = {
+            enabled = true,
+          },
+        },
+      })
+      vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
+    end,
+  },
 }
