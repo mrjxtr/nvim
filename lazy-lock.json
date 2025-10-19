@@ -43,6 +43,7 @@
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
   "rustaceanvim": { "branch": "master", "commit": "e9c5aaba16fead831379d5f44617547a90b913c7" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "1cb11cc658ee24a9826e3b909ca0b0f5e60597c7" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "ui": { "branch": "v3.0", "commit": "03b9718140375e7f3f5e4f3e04bc2b6c907440ec" },
   "volt": { "branch": "main", "commit": "620de1321f275ec9d80028c68d1b88b409c0c8b1" },
