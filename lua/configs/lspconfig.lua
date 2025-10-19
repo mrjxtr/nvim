@@ -67,9 +67,14 @@ vim.lsp.config("pyright", {
   capabilities = capabilities,
 
   settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
     python = {
       analysis = {
-        typeCheckingMode = "off", -- Disable type checking diagnostics
+        ignore = { "*" },
+        -- typeCheckingMode = "off", -- Disable type checking diagnostics
       },
     },
   },
