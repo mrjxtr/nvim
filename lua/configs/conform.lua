@@ -81,6 +81,11 @@ local options = {
     -- lsp_format = "never",
     lsp_format = "fallback",
   },
+
+  -- format_after_save = {
+  --   -- These options will be passed to conform.format()
+  --   lsp_format = "fallback",
+  -- },
 }
 
 require("conform").setup(options)
