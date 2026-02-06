@@ -279,7 +279,11 @@ return {
   -- Create Code Snapshots
   {
     "mistricky/codesnap.nvim",
+    tag = "v1.6.3",
     event = "BufEnter",
+    -- config = function()
+    --   require("codesnap").setup({})
+    -- end,
     build = "make",
     keys = {
       {
@@ -313,8 +317,8 @@ return {
       has_line_number = true,
       has_breadcrumbs = true,
       bg_color = "#535c68",
-      bg_x_padding = 60,
-      bg_y_padding = 60,
+      bg_x_padding = 1,
+      bg_y_padding = 1,
       bg_padding = nil,
       watermark = "",
     },
