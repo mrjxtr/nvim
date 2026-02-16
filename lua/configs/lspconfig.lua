@@ -28,6 +28,7 @@ local default_servers = {
   "rust_analyzer",
   "vue_ls",
   "markdown_oxide",
+  "zls",
 }
 
 -- lsps with default config
