@@ -48,16 +48,43 @@ vim.lsp.config("eslint", {
   capabilities = capabilities,
 })
 
+vim.lsp.config("vue_ls", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "vue", "typescript", "javascript" },
+  init_options = {
+    vue = {
+      hybridMode = false, -- Sometimes necessary to disable hybrid mode for better TS support
+    },
+  },
+})
+
 -- lspconfig.ts_ls.setup({ -- pre nvim 0.11
 vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
   -- filetypes = { "typescript" },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+  },
 
   init_options = {
     preferences = {
       disableSuggestions = true,
+    },
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vim.fn.stdpath("data")
+          .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+        languages = { "javascript", "typescript", "vue" },
+      },
     },
   },
 })
