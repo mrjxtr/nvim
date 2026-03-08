@@ -160,6 +160,17 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+vim.lsp.config("cssls", {
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+  },
+})
+
 -- lspconfig.tailwindcss.setup({ -- pre nvim 0.11
 vim.lsp.config("tailwindcss", {
   filetypes = {
