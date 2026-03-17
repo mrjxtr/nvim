@@ -8,7 +8,7 @@ lint.linters_by_ft = {
   django = { "djlint" },
   angular = { "djlint" },
   jinja = { "djlint" },
-  go = { "djlint" },
+  -- go = { "djlint" },
   bash = { "shellharden" },
 }
 
