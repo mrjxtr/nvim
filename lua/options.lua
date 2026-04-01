@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "jsx",
     "cpp",
     "c",
+    "vue",
   },
   callback = function()
     vim.opt_local.shiftwidth = 2
