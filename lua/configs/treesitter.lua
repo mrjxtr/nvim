@@ -1,5 +1,7 @@
-local options = {
-  ensure_installed = {
+-- install() is a no-op if parsers are already installed,
+-- so this is safe to call on every startup
+require("nvim-treesitter")
+  .install({
     "bash",
     "css",
     "go",
@@ -23,14 +25,12 @@ local options = {
     "dockerfile",
     "xml",
     "json",
-    "jsonc",
     "xresources",
     "vue",
     "tsx",
     "typescript",
     "templ",
     "rust",
-    "robots",
     "requirements",
     "regex",
     "jinja",
@@ -42,14 +42,63 @@ local options = {
     "c",
     "c_sharp",
     "zig",
-  },
+  })
+  :wait(300000)
 
-  highlight = {
-    enable = true,
-    use_languagetree = true,
-  },
+-- NOTE: OLD CONFIG
 
-  indent = { enable = true },
-}
-
-require("nvim-treesitter.configs").setup(options)
+-- local options = {
+--   ensure_installed = {
+--     "bash",
+--     "css",
+--     "go",
+--     "gomod",
+--     "gosum",
+--     "gotmpl",
+--     "gowork",
+--     "html",
+--     "javascript",
+--     "lua",
+--     "luadoc",
+--     "markdown",
+--     "printf",
+--     "python",
+--     "toml",
+--     "vim",
+--     "vimdoc",
+--     "yaml",
+--     "make",
+--     "csv",
+--     "dockerfile",
+--     "xml",
+--     "json",
+--     "jsonc",
+--     "xresources",
+--     "vue",
+--     "tsx",
+--     "typescript",
+--     "templ",
+--     "rust",
+--     "robots",
+--     "requirements",
+--     "regex",
+--     "jinja",
+--     "htmldjango",
+--     "graphql",
+--     "gitattributes",
+--     "gitignore",
+--     "cpp",
+--     "c",
+--     "c_sharp",
+--     "zig",
+--   },
+--
+--   highlight = {
+--     enable = true,
+--     use_languagetree = true,
+--   },
+--
+--   indent = { enable = true },
+-- }
+--
+-- require("nvim-treesitter.configs").setup(options)

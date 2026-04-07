@@ -3,8 +3,10 @@ return {
   -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
-    event = { "BufReadPre", "BufNewFile" },
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    -- event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("configs.treesitter")
     end,

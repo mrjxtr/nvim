@@ -2,6 +2,10 @@ require("nvchad.options")
 local o = vim.o
 local opt = vim.opt
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = false
+
 -- Indenting
 o.shiftwidth = 4
 o.tabstop = 4
