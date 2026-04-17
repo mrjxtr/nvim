@@ -454,4 +454,13 @@ return {
       vim.diagnostic.config({ virtual_text = false }) -- Disable default virtual text
     end,
   },
+
+  -- Git diffsplit
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("diffview").setup()
+    end,
+  },
 }
