@@ -10,6 +10,7 @@ lint.linters_by_ft = {
   jinja = { "djlint" },
   -- go = { "djlint" },
   bash = { "shellharden" },
+  sql = { "sqlfluff" },
 }
 
 lint.linters.luacheck.args = {
@@ -21,6 +22,14 @@ lint.linters.luacheck.args = {
   "plain",
   "--codes",
   "--ranges",
+  "-",
+}
+
+lint.linters.sqlfluff.args = {
+  "lint",
+  "--format=json",
+  "--dialect=postgres",
+  "--exclude-rules=AM04",
   "-",
 }
 

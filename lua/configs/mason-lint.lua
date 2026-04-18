@@ -1,4 +1,5 @@
 local lint = package.loaded["lint"]
+local mapping = require("mason-nvim-lint.mapping")
 
 -- List of linters to ignore during install
 local ignore_install = {}
@@ -14,10 +15,14 @@ local function table_contains(table, value)
 end
 
 -- Build a list of linters to install minus the ignored list.
+-- Skip linters that mason-nvim-lint has no mapping for (would crash Package.Parse with nil).
 local all_linters = {}
 for _, v in pairs(lint.linters_by_ft) do
   for _, linter in ipairs(v) do
-    if not table_contains(ignore_install, linter) then
+    if
+      not table_contains(ignore_install, linter)
+      and mapping.nvimlint_to_package[linter] ~= nil
+    then
       table.insert(all_linters, linter)
     end
   end

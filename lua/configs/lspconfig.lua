@@ -29,6 +29,7 @@ local default_servers = {
   "vue_ls",
   "markdown_oxide",
   "zls",
+  "sqls",
 }
 
 -- lsps with default config

@@ -42,6 +42,7 @@ require("nvim-treesitter")
     "c",
     "c_sharp",
     "zig",
+    "sql",
   })
   :wait(300000)
 

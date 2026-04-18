@@ -19,6 +19,7 @@ local options = {
     javascript = { "prettier" },
     bash = { "shellharden" },
     vue = { "prettier" },
+    sql = { "sqlfluff" },
   },
 
   formatters = {
@@ -56,6 +57,12 @@ local options = {
         "flase",
         "--no-semi",
       },
+    },
+
+    -- SQL
+    sqlfluff = {
+      require_cwd = false,
+      args = { "fix", "--dialect=postgres", "--exclude-rules=AM04", "-" },
     },
 
     -- Lua
