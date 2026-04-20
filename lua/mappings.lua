@@ -30,7 +30,21 @@ map(
 )
 
 -- Show function tooltip
-map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show function tooltip" })
+map("n", "gh", function()
+  local hl = "CmpDocBorder"
+  vim.lsp.buf.hover({
+    border = {
+      { "┌", hl },
+      { "─", hl },
+      { "┐", hl },
+      { "│", hl },
+      { "┘", hl },
+      { "─", hl },
+      { "└", hl },
+      { "│", hl },
+    },
+  })
+end, { desc = "Show function tooltip" })
 
 -- Enable/Disable spellcheck
 map(
