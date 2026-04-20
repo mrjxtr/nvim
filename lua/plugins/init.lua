@@ -458,7 +458,24 @@ return {
   -- Git diffsplit
   {
     "sindrets/diffview.nvim",
-    event = "VeryLazy",
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewToggleFiles",
+      "DiffviewFileHistory",
+      "DiffviewRefresh",
+    },
+    keys = {
+      { "<leader>go", "<cmd>DiffviewOpen<cr>", desc = "Diffview open" },
+      { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
+      {
+        "<leader>gn",
+        "<cmd>DiffviewToggleFiles<cr>",
+        desc = "Diffview toggle files panel",
+      },
+      { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview file history" },
+      { "<leader>gr", "<cmd>DiffviewRefresh<cr>", desc = "Diffview refresh" },
+    },
     config = function()
       require("diffview").setup()
     end,
