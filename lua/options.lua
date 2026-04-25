@@ -25,6 +25,30 @@ o.autoindent = true
 o.wrap = false -- don't wrap lines
 o.swapfile = false -- don't need swap files
 
+-- auto-reload buffers when the file changes on disk
+o.autoread = true
+
+vim.api.nvim_create_autocmd(
+  { "FocusGained", "BufEnter", "CursorHold", "CursorHoldI", "TermClose", "TermLeave" },
+  {
+    group = vim.api.nvim_create_augroup("auto_reload_changed_files", { clear = true }),
+    callback = function()
+      if vim.fn.mode() ~= "c" and vim.fn.getcmdwintype() == "" then
+        vim.cmd("checktime")
+      end
+    end,
+    desc = "Reload buffers if changed on disk",
+  }
+)
+
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  group = vim.api.nvim_create_augroup("notify_file_changed", { clear = true }),
+  callback = function()
+    vim.notify("File changed on disk, buffer reloaded", vim.log.levels.WARN)
+  end,
+  desc = "Notify when a buffer is auto-reloaded",
+})
+
 -- Disable codeium by default
 vim.g.codeium_enabled = false
 
