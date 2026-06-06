@@ -126,6 +126,7 @@ vim.lsp.config("gopls", { -- nvim 0.11
     gopls = {
       analyses = {
         unusedparams = true,
+        ST1000 = false, -- don't require package doc comments at the top
       },
       completeUnimported = true,
       usePlaceholders = true,
