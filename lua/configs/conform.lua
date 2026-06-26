@@ -54,7 +54,7 @@ local options = {
         "--single-quote",
         "false",
         "--jsx-single-quote",
-        "flase",
+        "false",
         "--no-semi",
       },
     },
