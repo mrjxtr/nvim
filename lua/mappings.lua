@@ -18,8 +18,7 @@ map("v", ">", ">gv")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Enable/Disable Codeium
-map({ "n", "v" }, "<C-c>", "<cmd> CodeiumEnable <cr>", { desc = "Enable Codeium" })
-map({ "n", "v" }, "<C-c-d>", "<cmd> CodeiumDisable <cr>", { desc = "Disable Codeium" })
+map({ "n", "v" }, "<C-c>", "<cmd> CodeiumToggle <cr>", { desc = "Enable Codeium" })
 
 -- Find all TODOs
 map(
