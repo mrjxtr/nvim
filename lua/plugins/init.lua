@@ -430,9 +430,19 @@ return {
           },
         },
       })
-      require("cmp").setup.buffer({
-        sources = { { name = "crates" } },
+      -- register the source per toml buffer; a bare setup.buffer() here
+      -- would only apply to whichever buffer triggered the plugin load
+      local function add_crates_source()
+        require("cmp").setup.buffer({
+          sources = { { name = "crates" } },
+        })
+      end
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "toml",
+        group = vim.api.nvim_create_augroup("crates_cmp_source", { clear = true }),
+        callback = add_crates_source,
       })
+      add_crates_source() -- plugin loads on the first toml buffer, autocmd missed it
     end,
   },
 

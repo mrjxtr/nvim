@@ -14,6 +14,7 @@ vim.diagnostic.config({ virtual_text = false })
 lspconfig.servers = {
   "lua_ls",
   "pyright",
+  "ruff", -- lint diagnostics for python (pyright's are suppressed below)
   "gopls",
   "ts_ls",
   "eslint",
@@ -37,6 +38,10 @@ local default_servers = {
   "sqls",
 }
 
+-- mason installs everything in both lists (rust_analyzer is rustaceanvim's
+-- job, denols uses the system deno, so neither belongs here)
+vim.list_extend(lspconfig.servers, default_servers)
+
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
   -- lspconfig[lsp].setup({
@@ -47,6 +52,23 @@ for _, lsp in ipairs(default_servers) do
   })
 end
 
+-- denols uses the system deno binary (not a mason package), so
+-- mason-lspconfig's automatic_enable never picks it up, enable manually.
+-- Only attaches in deno projects (deno.json/deno.jsonc root); ts_ls
+-- already excludes those, so they never overlap.
+vim.lsp.config("denols", {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+})
+
+-- enable every configured server explicitly; without this, servers only
+-- start because mason-lspconfig auto-enables installed mason packages,
+-- which silently breaks on a fresh machine (or for non-mason servers
+-- like denols)
+vim.lsp.enable(lspconfig.servers)
+vim.lsp.enable("denols")
+
 -- lspconfig.eslint.setup({ -- pre nvim 0.11
 vim.lsp.config("eslint", {
   on_attach = on_attach,
@@ -54,16 +76,14 @@ vim.lsp.config("eslint", {
   capabilities = capabilities,
 })
 
+-- vue_ls v3 only handles the template side of .vue files; TS intelligence
+-- (even inside .vue) comes from ts_ls via @vue/typescript-plugin below.
+-- hybridMode was removed in v3, and takeover of plain ts/js files is gone.
 vim.lsp.config("vue_ls", {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
-  filetypes = { "vue", "typescript", "javascript" },
-  init_options = {
-    vue = {
-      hybridMode = false, -- Sometimes necessary to disable hybrid mode for better TS support
-    },
-  },
+  filetypes = { "vue" },
 })
 
 -- lspconfig.ts_ls.setup({ -- pre nvim 0.11
@@ -167,6 +187,12 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- upstream default includes plain "html", which attaches djlsp to every
+-- html file; only want it on actual template files
+vim.lsp.config("djlsp", {
+  filetypes = { "htmldjango", "jinja" },
+})
+
 vim.lsp.config("cssls", {
   settings = {
     css = {
@@ -181,7 +207,7 @@ vim.lsp.config("cssls", {
 -- lspconfig.tailwindcss.setup({ -- pre nvim 0.11
 vim.lsp.config("tailwindcss", {
   filetypes = {
-    "django - html",
+    "django-html",
     "htmldjango",
     "gohtml",
     "gohtmltmpl",

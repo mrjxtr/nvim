@@ -72,8 +72,8 @@ vim.api.nvim_create_autocmd("FileType", {
     "typescript",
     "json",
     "jsonc",
-    "tsx",
-    "jsx",
+    "typescriptreact",
+    "javascriptreact",
     "cpp",
     "c",
     "vue",
@@ -94,10 +94,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client == nil then
       return
     end
-    -- if client.name == "ruff" then
-    --   -- Disable hover in favor of Pyright
-    --   client.server_capabilities.hoverProvider = false
-    -- end
+    if client.name == "ruff" then
+      -- Disable hover in favor of Pyright
+      client.server_capabilities.hoverProvider = false
+    end
   end,
   desc = "LSP: Disable hover capability from Ruff",
 })
