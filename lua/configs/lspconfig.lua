@@ -5,6 +5,11 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 -- local lspconfig = require("lspconfig") -- pre nvim 0.11
 local lspconfig = require("nvchad.configs.lspconfig") -- nvim 0.11
 
+-- NvChad's defaults() turns native virtual text on, disable it here (this file
+-- runs right after defaults()) so tiny-inline-diagnostic is the only renderer,
+-- regardless of whether files open before or after VeryLazy
+vim.diagnostic.config({ virtual_text = false })
+
 -- list of all servers configured.
 lspconfig.servers = {
   "lua_ls",
@@ -25,7 +30,7 @@ local default_servers = {
   -- "htmx", -- NOTE: Uncomment if HTMX is needed
   "templ",
   "dockerls",
-  "rust_analyzer",
+  -- "rust_analyzer" is intentionally not here, rustaceanvim manages it
   "vue_ls",
   "markdown_oxide",
   "zls",

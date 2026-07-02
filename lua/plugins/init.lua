@@ -443,10 +443,16 @@ return {
     priority = 1000,
     config = function()
       require("tiny-inline-diagnostic").setup({
-        preset = "classic",
+        preset = "simple",
         transparent_bg = true,
         options = {
           show_source = {
+            enabled = true,
+          },
+          show_related = {
+            enabled = true,
+          },
+          multilines = {
             enabled = true,
           },
         },

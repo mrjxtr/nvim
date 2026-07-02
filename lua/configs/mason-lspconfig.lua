@@ -24,5 +24,7 @@ end
 
 require("mason-lspconfig").setup({
   ensure_installed = all_servers,
-  automatic_installation = false,
+  -- rustaceanvim spawns its own rust-analyzer, auto-enabling it here
+  -- would attach a duplicate client to rust buffers
+  automatic_enable = { exclude = { "rust_analyzer" } },
 })
