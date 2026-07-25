@@ -496,4 +496,15 @@ return {
       require("diffview").setup()
     end,
   },
+
+  -- Scrollbar (shows where you are in the file)
+  {
+    "lewis6991/satellite.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      handlers = {
+        marks = { enable = false },
+      },
+    },
+  },
 }
