@@ -193,6 +193,20 @@ vim.lsp.config("djlsp", {
   filetypes = { "htmldjango", "jinja" },
 })
 
+-- sqls gets its db connection from workspace settings. The path is relative
+-- to nvim's cwd, so any project launched from its root with data/data.db
+-- (my go + sqlite layout) connects automatically; elsewhere sqls just
+-- reports no connection, same as having none configured.
+vim.lsp.config("sqls", {
+  settings = {
+    sqls = {
+      connections = {
+        { driver = "sqlite3", dataSourceName = "data/data.db" },
+      },
+    },
+  },
+})
+
 vim.lsp.config("cssls", {
   settings = {
     css = {

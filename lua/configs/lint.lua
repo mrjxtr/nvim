@@ -22,11 +22,11 @@ lint.linters.luacheck.args = {
   "-",
 }
 
+-- dialect and rule tweaks come from sqlfluff config files: per-repo .sqlfluff
+-- when present, else the fallback in ~/.config/sqlfluff/.sqlfluff (postgres)
 lint.linters.sqlfluff.args = {
   "lint",
   "--format=json",
-  "--dialect=postgres",
-  "--exclude-rules=AM04",
   "-",
 }
 

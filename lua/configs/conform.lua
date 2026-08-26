@@ -57,10 +57,10 @@ local options = {
       },
     },
 
-    -- SQL
+    -- SQL (dialect comes from .sqlfluff config files, see lint.lua)
     sqlfluff = {
       require_cwd = false,
-      args = { "fix", "--dialect=postgres", "--exclude-rules=AM04", "-" },
+      args = { "fix", "-" },
     },
 
     -- Lua
