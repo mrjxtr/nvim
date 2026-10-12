@@ -2,7 +2,9 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     go = { "gofumpt", "goimports", "golines" },
-    python = { "black", "isort" },
+    -- python = { "black", "isort" },
+    -- ruff reads the nearest pyproject.toml [tool.ruff], so no args needed here
+    python = { "ruff_organize_imports", "ruff_format" },
     htmldjango = { "djlint" },
     jinja = { "djlint" },
     css = { "prettier" },
@@ -21,20 +23,20 @@ local options = {
   },
 
   formatters = {
-    -- Python
-    black = {
-      prepend_args = {
-        "--fast",
-        "--line-length",
-        "88",
-      },
-    },
-    isort = {
-      prepend_args = {
-        "--profile",
-        "black",
-      },
-    },
+    -- Python (black/isort kept for switching back)
+    -- black = {
+    --   prepend_args = {
+    --     "--fast",
+    --     "--line-length",
+    --     "88",
+    --   },
+    -- },
+    -- isort = {
+    --   prepend_args = {
+    --     "--profile",
+    --     "black",
+    --   },
+    -- },
 
     -- Golang
     golines = {
